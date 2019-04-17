@@ -1,6 +1,8 @@
 #include<iostream>
 #include<string> 
 using namespace std;
+//词法分析器
+
 bool isNum(string str);//判断数字
 bool isWord(string str);//判断字母
 int kyNum(string& str);//返回关键字种别码

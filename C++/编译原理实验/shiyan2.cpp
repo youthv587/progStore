@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 //递归下降分析器
-int t;
-char s[100];//="i+i+a#";字符串  s[t]表示当前字符 
-char vt[5]={'i','+','-','*','/'};
+int t=0;
+char s[100];存放输入的字符串  s[t]表示当前字符 
+char vt[7]={'i','+','-','*','/','(',')'};//终结符
 
 void E();
 void T();
@@ -18,8 +18,8 @@ void match(char ch)
 }
 
 int isVt(char ch){
-	for(int i=0;i<=4;i++){
-	if(ch=vt[i])return 1;//是终结符
+	for(int i=0;i<=6;i++){
+	if(ch==vt[i])return 1;//是终结符
 	}
 	return 0;//不是终结符
 }
@@ -30,7 +30,7 @@ void E()
 	G();
 }
 
-void G()//jia jian
+void G()//加减
 {
 	if (s[t]== '+') {
 		match('+');
@@ -50,7 +50,7 @@ void T()
 	S();
 }
 
-void S()//cheng chu
+void S()//乘除
 {
 	if (s[t]== '*') {
 		match('*');
@@ -83,19 +83,17 @@ void F()
 		}
 	else {
 		//错误并退出分析
-		cout << "第" << t + 1 << "个字符'" << s[t] << "匹配错误  ";
+		cout << "第" << t + 1 << "个字符" << s[t] << "匹配错误  ";
 		exit(0);
 	}
 }
 
 int main()
 {
-	//s[100]='i+i*i#';
-
+		//例：s[100]='i+i*i#'，#为结束符;
 		cout<<"在此位置输入符号串例如：";
 		cin>>s;
 		E();
-		cout<<endl;
 		cout<<s[t];
 		if(s[t]=='#'){
 			cout<<"匹配完成"<<endl;

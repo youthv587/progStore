@@ -10,8 +10,10 @@ void DDA_Line(int x1, int y1, int x2, int y2) {
     if (abs(dx) >= abs(dy)) {// |k|<=1
         epsl =abs(dx);} 
     else {// |k|>1
-        epsl =abs(dy);}
-    xIncre=dx/epsl;
+        epsl =abs(dy);
+    }
+	//x,y的增量，这里使用的是课本上的思路，比较巧妙，适应正负斜率和端点互换。
+    xIncre=dx/epsl;	
     yIncre=dy/epsl;
 
 

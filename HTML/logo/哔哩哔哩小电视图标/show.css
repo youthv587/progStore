@@ -1,0 +1,149 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.word {
+	font-family: 仿宋;
+	font-weight: bold;
+	text-align: center;
+	font-size: 2em;
+	color: #0088ff;
+	margin: 0;
+	padding: 0;
+}
+.tv {
+	position: relative;
+	left: 3%;
+	width: 1300px;
+	margin: 0;
+	background: #FFFFFF;
+	z-index: -1;
+	top: -55px;
+}
+.body {
+	border-radius: 80px;
+	margin: 0;
+	left: 25%;
+	width: 600px;
+	height: 400px;
+	position: relative;
+	background: #FFFFFF;
+	border: 60px solid rgb(0,180,250);
+	z-index: 0;
+}
+.ear {
+	position: relative;
+	left: -3%;
+	top: 5px;
+}
+.eye {
+	position: relative;
+}
+.mouth {
+	position: relative;
+}
+.foot {
+	position: relative;
+	left: -0%;
+}
+#left-ear {
+	position: relative;
+	left: 47%;
+	top: 45px;
+	width: 50px;
+	height: 120px;
+	background: rgb(0,180,250);
+	border-radius: 10px;
+	transform: rotate(-40deg);
+	z-index: 1;
+}
+#right-ear {
+	position: absolute;
+	right: 35%;
+	top: 45px;
+	width: 50px;
+	height: 120px;
+	background: rgb(0,180,250);
+	border-radius: 10px;
+	transform: rotate(40deg);
+	z-index: 0;
+}
+#left-eye {
+	position: relative;
+	left: 12.5%;
+	top: 100px;
+	width: 25%;
+	height: 60px;
+	background: rgb(0,180,250);
+	transform: rotate(-8deg);
+	z-index: 1;
+}
+#right-eye {
+	position: absolute;
+	right: 12.5%;
+	top: 100px;
+	width: 25%;
+	height: 60px;
+	background: rgb(0,180,250);
+	transform: rotate(8deg);
+	z-index: 0;
+}
+#left-m {
+	position: relative;
+	left: 33%;
+	top: 240px;
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	border: 30px solid rgb(0,180,250);
+	border-radius: 0% 0% 40% 60%/0% 0% 100% 100%;
+	border-top: none;
+	transform: rotate(0deg);
+	z-index: 1;
+}
+#right-m {
+	position: absolute;
+	right: 32%;
+	top: 240px;
+	z-index: 0;
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	border: 30px solid rgb(0,180,250);
+	border-radius: 0% 0% 60% 40%/0% 0% 100% 100%;
+	border-top: none;
+	transform: rotate(0deg);
+}
+#left-f {
+	position: relative;
+	left: 36%;
+	top: 0px;
+	width: 100px;
+	height: 50px;
+	border-radius: 0 0 50px 50px;
+	background: rgb(0,180,250);
+	z-index: 1;
+}
+#right-f {
+	position: absolute;
+	right: 31%;
+	top: 0px;
+	width: 100px;
+	height: 50px;
+	border-radius: 0 0 50px 50px;
+	background: rgb(0,180,250);
+	z-index: 0;
+}
+.img {
+	position: absolute;
+	color: red;
+	left: 10%;
+	top: 200px;
+}
+.img:hover {
+	z-index: 2;
+	width: 200px;
+	height: 200px;
+	color: rgb(0,180,250);
+	background: url('image/origin_img.png') no-repeat;
+}

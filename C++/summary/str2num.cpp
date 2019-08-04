@@ -17,6 +17,12 @@ int main(){
    sum=sum+d;
    n++;
   }
+  /*
+  单个字符转数字可以直接-'0';
+  如：char n='9';int b,c;
+  b=n-'0';c=9*b;    //c==>81
+  
+  */
   cout<<sum;
  
   return 0;

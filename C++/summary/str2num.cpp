@@ -9,7 +9,7 @@ string k;
 
 int main(){
   cin>>k;
- 
+ /*方法1*/
   while(n<k.size()){//求和
    ss<<k[n];        //流入字符
    ss>>d;           //转为数字
@@ -17,7 +17,8 @@ int main(){
    sum=sum+d;
    n++;
   }
-  /*
+  
+  /*方法2
   单个字符转数字可以直接-'0';
   如：char n='9';int b,c;
   b=n-'0';c=9*b;    //c==>81

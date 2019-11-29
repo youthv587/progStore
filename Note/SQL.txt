@@ -1,0 +1,21 @@
+1、按中文排序：
+SELECT id,name FROM test ORDER BY CONVERT(name USING gbk) ASC          //转码后排序
+
+2、NULL值处理
+IFNULL(COUNT(number),0)                                               //将NULL值转为 0
+
+3、MySQL中的any_value()函数
+
+抑制ONLY_FULL_GROUP_BY值被拒绝                                      //使用聚合函数（sum、avg、max等）和group by时可能报的错 
+
+
+
+
+
+
+
+
+
+
+
+

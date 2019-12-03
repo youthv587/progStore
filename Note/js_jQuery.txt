@@ -1,4 +1,4 @@
-标签修改：
+1、标签修改：
 
 $("li input:first-child").not(".default").removeAttr("style")//移除style样式
 
@@ -10,7 +10,16 @@ $(".search-choice").remove();								//移除指定标签
 
 $("li").not(".active-result").removeClass("result-selected").addClass("active-result");//删除和添加类操作
 
-事件触发：
+function initCSS() {                                //遍历修改样式
+       let input=document.getElementsByTagName("input");
+       for(let x of input){
+           x.style.height="18px";
+           x.style.margin="0 1px";
+           x.style.padding="0 2px";
+       }
+    }
+
+2、事件触发：
 
 $("#reset_select").click(function(){						//标签点击效果
         $(".search-choice").remove();
@@ -21,14 +30,22 @@ $("#reset_select").click(function(){						//标签点击效果
 
 
 
-字符处理：
+3、字符处理：
 toLocaleString()                  //使用特定分隔符连接字符串，实例如下
 new Date()                        //Tue Nov 26 2019 10:17:52 GMT+0800 (中国标准时间) 
 new Date().toLocaleString()       //2011/11/11 上午11:11:11 
 
 
 
+4、js注意点：
 
+使用 {} 来代替 new Object()
+使用 "" 来代替 new String()
+使用 0 来代替 new Number()
+使用 false 来代替 new Boolean()
+使用 [] 来代替 new Array()
+使用 /()/ 来代替 new RegExp()
+使用 function (){}来代替 new Function()
 
 
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>css实验</title>
+</head>
+<style>
+
+.animation1{
+animation: wing1-1 3s ease-in-out infinite;
+transform: rotate(0deg);
+transform-origin:top center;
+}
+.animation2{
+animation: wing1-2 3s ease-in-out infinite;
+transform: rotate(0deg);
+transform-origin:top center;
+}
+
+@keyframes wing1-1{
+	0%   {transform: rotate(-40deg);}
+	50%  {transform: rotate(40deg);}
+    100% {transform: rotate(-40deg);}
+}
+@keyframes wing1-2{
+	0%   {transform: rotate(60deg);}
+	50%  {transform: rotate(-60deg);}
+    100% {transform: rotate(60deg);}
+}
+
+
+.box{
+position:absolute;
+left:300px;
+}
+.up{
+margin:0px 9px;
+width:2px;
+height:200px;
+background: black;
+transform: rotate(0deg);
+transform-origin:top center;
+}
+.down{
+width:20px;
+height:20px;
+border-radius:10px;
+background: black;
+transform: rotate(0deg);
+transform-origin:top center;
+}
+</style>
+<body>
+
+
+<div class="box">
+<div class="animation1">
+<div class="up"></div>
+<div class="animation2">
+<div class="down"></div>
+</div>
+</div>
+
+</div>
+
+
+</body>
+
+</html>

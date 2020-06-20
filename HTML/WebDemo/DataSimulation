@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>数据交换</title>
+    <style>
+.table{
+    width: 60%;
+    text-align: center;  
+}
+table,th,td,tr{
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+tbody tr:hover{
+    background-color:#cccccc;
+}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <table class="table">
+            <tr>
+            <thead><tr><th v-text="tableHead.id"></th><th v-text="tableHead.name"></th>
+                <th v-text="tableHead.age"></th><th v-text="tableHead.sex"></th>
+                <th v-text="tableHead.job"></th></tr></thead>
+            <tbody><tr v-for="data in tableData"><td v-text="data.id"></td><td v-text="data.name"></td>
+                <td v-text="data.age"></td><td v-text="data.sex"></td>
+                <td v-text="data.job"></td></tr></tbody>
+        </table>
+
+
+      </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="http://mockjs.com/dist/mock.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script> 
+    Mock.mock('https://www.test.com',{
+    
+          "userInfo|4":[{    //生成|num个如下格式名字的数据
+              "id|+1":1,  //数字从当前数开始后续依次加一
+              "name":"@cname",    //名字为随机中文名字
+              "age|18-28":25,    //年龄为18-28之间的随机数字
+              "sex|1":["男","女"],    //性别是数组中的一个，随机的
+              "job|1":["web","UI","python","php"]    //工作是数组中的一个
+          }]
+        })
+    </script>
+<script> 
+var app = new Vue({
+  el: '#app',
+  data: {
+        tableHead:{
+            id:'id',
+            name:"姓名",
+            age:"年龄",
+            sex:"性别",
+            job:"职业"
+        },
+        tableData:[]
+  },
+  mounted(){
+            this.getData();
+        },
+  methods:{
+    getData:function(){
+        axios({
+        method:"get", 
+        url:"https://www.test.com"     
+    }).then(res=>{
+        //console.log(res);
+        if(res.status==200){
+            if(res.data.userInfo && res.data.userInfo.length>0){//存在且不为空
+               this.tableData=res.data.userInfo;
+            }
+        }
+        console.log(res.data.userInfo);
+    })
+    }
+    
+  }
+  
+})
+</script>
+
+</body>
+
+</html>
